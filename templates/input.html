@@ -21,7 +21,7 @@
                             <input type="text" id="train"  class="form-control" placeholder="车次">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="start_dtp"  class="form-control" placeholder="开车时间" data-date-format="yyyy-mm-dd hh:ii">
+                            <input type="text" id="start_dtp"  class="form-control" placeholder="开车时间" >
                         </div>
                         <div class="col-md-4">
                             <input type="text" id="stop_dtp"  class="form-control" placeholder="停车时间">
@@ -125,10 +125,22 @@
 
                 });
             });
-            $('#start_dtp').datetimepicker();
-            $('#stop_dtp').datetimepicker();
-            $('#in_dtp').datetimepicker();
-            $('#out_dtp').datetimepicker();
+            $('#start_dtp').datetimepicker({
+                language : "zh-CN",
+                autoclose: true
+            });
+            $('#stop_dtp').datetimepicker({
+                language : "zh-CN",
+                autoclose: true
+            });
+            $('#in_dtp').datetimepicker({
+                language : "zh-CN",
+                autoclose: true
+            });
+            $('#out_dtp').datetimepicker({
+                language : "zh-CN",
+                autoclose: true
+            });
         });
     </script>
 {% endblock %}
