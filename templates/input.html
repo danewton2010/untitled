@@ -80,31 +80,30 @@
                 </tr>
             </table>
             <div class="col-md-4 col-md-offset-8">
-                <button type="button" class="btn btn-info btn-block" id="submit">提交</button>
+                    <button type="submit" class="btn btn-info btn-block" id="submit">提交</button>
             </div>
         </div>
     </div>
     <script language="javascript" type="text/javascript">
         $(document).ready(function (){
             $("#submit").click(function(){
-                var html = '';
+                var html_str = '';
                 $('#tab').find('tr').each(function () {
                     $(this).find('td').each(function () {
-                        html += $(this).text() + ',';
+                        html_str += $(this).text() + ',';
                     });
                 });
                 $.ajax({
                     type: "post",
                     url: "/add/",
-                    data: {"html_data":html},
+                    data: {"html_data":html_str},
                     dataType: "json",
                     success: function(data){
-                        $('#start_dtp').empty();   //清空所有内容
-                        console.log(data);
-                    }
+                        alert("ajax ok");
+                        alert(data.html_data);
+                    },
                 });
-                alert(html);
-                return false;
+
             });
             $("#jisuan").click(function (){
                 //计算
