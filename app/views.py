@@ -33,3 +33,15 @@ def grid(request):
     ccbz_data = CCBZ.objects.all()
     print(ccbz_data.query)
     return render_to_response("grid.html",{"data":ccbz_data})
+
+def chart(request):
+    cursor = connection.cursor()
+    sql = "select name,sum(work_time) as s from app_ccbz group by name order by s desc;"
+    cursor.execute(sql)
+    ccqk_data = cursor.fetchall()
+    k=[]
+    v=[]
+    for cc in ccqk_data:
+        k.append(cc[0])
+        v.append(cc[1])
+    return render_to_response("chart.html",{"key":k,"value":v})

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%  block content %}
+    <div id="page-wrapper">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-money"></i>   乘务员出乘情况</h3>
+            </div>
+            <div class="panel-body">
+                    {% for k in key %}
+                        {{ k }}
+                    {% endfor %}
+                    {% for v in value %}
+                        {{ v }}
+                    {% endfor %}
+            </div><!-- /.panel-body -->
+        </div><!-- /.panel-primary -->
+    </div><!-- /.page-wrapper -->
+{% endblock %}
+

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from app.views import index,input,add,grid
+from app.views import index,input,add,grid,chart
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^input/', input),
     url(r'^add/', add),
     url(r'^grid/', grid),
+    url(r'^chart/', chart),
 ]
