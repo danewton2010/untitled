@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponse
 from django.shortcuts import render_to_response
 from django.shortcuts import HttpResponseRedirect
 from django.db import connection,transaction
+from app.models import CCBZ
 import json
 
 # Create your views here.
@@ -26,3 +27,9 @@ def add(request):
     transaction.commit()
 
     return HttpResponse(json.dumps({"html_data":data}))
+
+
+def grid(request):
+    ccbz_data = CCBZ.objects.all()
+    print(ccbz_data.query)
+    return render_to_response("grid.html",{"data":ccbz_data})

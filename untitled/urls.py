@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from app.views import index,input,add
+from app.views import index,input,add,grid
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/', index),
     url(r'^input/', input),
     url(r'^add/', add),
+    url(r'^grid/', grid),
 ]
