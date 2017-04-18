@@ -12,19 +12,19 @@
                 <div>
                     <div id="info" >
                         <div class="col-md-4">
-                            <input type="text" id="code"  class="form-control" placeholder="代码">
+                            <input type="text" id="code" tabindex="1" class="form-control" placeholder="代码">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="name"  class="form-control" placeholder="姓名">
+                            <input type="text" id="name" tabindex="2" class="form-control" placeholder="姓名">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="train"  class="form-control" placeholder="车次">
+                            <input type="text" id="train" tabindex="3" class="form-control" placeholder="车次">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="start_dtp"  class="form-control" placeholder="开车时间" >
+                            <input type="text" id="start_dtp" tabindex="4" class="form-control" placeholder="开车时间" >
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="stop_dtp"  class="form-control" placeholder="停车时间">
+                            <input type="text" id="stop_dtp" tabindex="5" class="form-control" placeholder="停车时间">
                         </div>
                         <div class="col-md-2">
                             <input type="text" id="work_time"  class="form-control" placeholder="出乘时间">
@@ -33,10 +33,10 @@
                             <input type="text" id="work_bonus"  class="form-control" placeholder="出乘补助">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="in_dtp"  class="form-control" placeholder="进入公寓">
+                            <input type="text" id="in_dtp" tabindex="6" class="form-control" placeholder="进入公寓">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" id="out_dtp"  class="form-control" placeholder=" 离开公寓">
+                            <input type="text" id="out_dtp" tabindex="7" class="form-control" placeholder=" 离开公寓">
                         </div>
                         <div class="col-md-2">
                             <input type="text" id="rest_time"  class="form-control" placeholder="休息时间">
@@ -45,7 +45,7 @@
                             <input type="text" id="rest_bonus"  class="form-control" placeholder="休息补助">
                         </div>
                         <div class="col-md-4">
-                            <button type="button" class="btn btn-default btn-block" id="jisuan">计算</button>
+                            <button type="button" class="btn btn-default btn-block" tabindex="8" id="jisuan">计算</button>
                         </div>
                         <div class="col-md-2 col-md-offset-6">
                             <input type="text" id="sum_bonus"  class="form-control" placeholder="合计补助">
@@ -80,7 +80,7 @@
                 </tr>
             </table>
             <div class="col-md-4 col-md-offset-8">
-                    <button type="submit" class="btn btn-info btn-block" id="submit">提交</button>
+                <button type="submit" class="btn btn-info btn-block" id="submit">提交</button>
             </div>
         </div>
     </div>
@@ -149,19 +149,31 @@
             });
             $('#start_dtp').datetimepicker({
                 language : "zh-CN",
-                autoclose: true
+                autoclose: true,
+                todayBtn: true,
+                todayHighlight: true,
+                keyboardNavigation: true
             });
             $('#stop_dtp').datetimepicker({
                 language : "zh-CN",
-                autoclose: true
+                autoclose: true,
+                todayBtn: true,
+                todayHighlight: true,
+                keyboardNavigation: true
             });
             $('#in_dtp').datetimepicker({
                 language : "zh-CN",
-                autoclose: true
+                autoclose: true,
+                todayBtn: true,
+                todayHighlight: true,
+                keyboardNavigation: true
             });
             $('#out_dtp').datetimepicker({
                 language : "zh-CN",
-                autoclose: true
+                autoclose: true,
+                todayBtn: true,
+                todayHighlight: true,
+                keyboardNavigation: true
             });
         });
     </script>
