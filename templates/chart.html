@@ -6,13 +6,32 @@
                 <h3 class="panel-title"><i class="fa fa-money"></i>   乘务员出乘情况</h3>
             </div>
             <div class="panel-body">
-                    {% for k in key %}
-                        {{ k }}
-                    {% endfor %}
-                    {% for v in value %}
-                        {{ v }}
-                    {% endfor %}
+                <div id="container" style="min-width:400px;height:400px;"></div>
+
+                <script>
+                    var chart= new Highcharts.Chart('container', {
+                        chart: {
+                            type: 'bar'                         //指定图表的类型，默认是折线图（line）
+                        },
+                        title: {
+                            text: '出乘时间'                //指定图表标题
+                        },
+                        xAxis: {
+                            categories: {{ key|safe }} //指定x轴分组
+                        },
+                        yAxis: {
+                            title: {
+                                text: '换算小时'                //指定y轴的标题
+                            }
+                        },
+                        series: [{                              //指定数据列
+                            name: '工作时间',                       //数据列名
+                            data: {{ value }}                     //数据
+                        }]
+                    });
+                </script>
             </div><!-- /.panel-body -->
+
         </div><!-- /.panel-primary -->
     </div><!-- /.page-wrapper -->
 {% endblock %}
