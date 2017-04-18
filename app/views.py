@@ -36,12 +36,14 @@ def grid(request):
 
 def chart(request):
     cursor = connection.cursor()
-    sql = "select name,sum(work_time) as s from app_ccbz group by name order by s desc;"
+    sql = "select name,sum(work_time),sum(rest_time) from app_ccbz group by name order by name ;"
     cursor.execute(sql)
     ccqk_data = cursor.fetchall()
     k=[]
-    v=[]
+    v_work=[]
+    v_rest=[]
     for cc in ccqk_data:
         k.append(cc[0])
-        v.append(cc[1])
-    return render_to_response("chart.html",{"key":k,"value":v})
+        v_work.append(cc[1])
+        v_rest.append(cc[2])
+    return render_to_response("chart.html",{"key":k,"v_w_time":v_work,"v_r_time":v_rest})
